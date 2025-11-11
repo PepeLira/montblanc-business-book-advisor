@@ -1,14 +1,23 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --brand-primary: #1b365c;
+  --brand-secondary: #383838;
   color-scheme: light;
 }
 
 :root[data-color-scheme="dark"] {
   --background: #0a0a0a;
   --foreground: #ededed;
+  color-scheme: dark;
+}
+
+:root[data-color-scheme="brand"] {
+  --background: var(--brand-primary);
+  --foreground: #f7f7f7;
   color-scheme: dark;
 }
 
@@ -23,7 +32,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: Arial, Helvetica, sans-serif;
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --font-sans: "Roboto", Arial, Helvetica, sans-serif;
   --font-mono: SFMono-Regular, Consolas, "Liberation Mono", monospace;
 }
 
