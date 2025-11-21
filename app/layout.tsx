@@ -1,6 +1,13 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
+
+const sourceSans = Source_Sans_3({ 
+  subsets: ["latin"],
+  weight: ['300', '400', '600', '700'],
+  variable: '--font-source-sans'
+});
 
 export const metadata: Metadata = {
   title: "Montblanc Book Advisor",
@@ -20,7 +27,7 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className={`antialiased ${sourceSans.variable}`}>{children}</body>
     </html>
   );
 }

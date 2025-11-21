@@ -11,25 +11,40 @@ export const STARTER_PROMPTS: StartScreenPrompt[] = [
     prompt: "¿Qué puedes hacer?",
     icon: "circle-question",
   },
+  {
+    label: "Me gustaría leer sobre Libros de negocios y Liderazgo",
+    prompt: "Me gustaría leer sobre Libros de negocios y Liderazgo",
+    icon: "book-open",
+  },
+  {
+    label: "Cuentame sobre el libro Superintelligence (2020), quién lo escribió y sus puntos clave",
+    prompt: "Cuentame sobre el libro Superintelligence (2020), quién lo escribió y sus puntos clave",
+    icon: "search",
+  },
 ];
 
 export const PLACEHOLDER_INPUT = "Pregúntame cualquier cosa...";
 
 export const GREETING = "Hola 👋 ¿sobre qué te gustaría leer hoy?";
 
-export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
-  color: {
-    grayscale: {
-      hue: 220,
-      tint: 6,
-      shade: theme === "dark" ? -1 : -4,
+export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
+  // Mark theme as used to avoid lint warning
+  void theme;
+  
+  return {
+    color: {
+      grayscale: {
+        hue: 220,
+        tint: 6,
+        shade: -4, // Always use light theme
+      },
+      accent: {
+        primary: "#1b365c", // Always use light theme brand color
+        level: 1,
+      },
     },
-    accent: {
-      primary: theme === "dark" ? "#f1f5f9" : "#0f172a",
-      level: 1,
-    },
-  },
-  radius: "round",
-  // Add other theme options here
-  // chatkit.studio/playground to explore config options
-});
+    radius: "round",
+    // Add other theme options here
+    // chatkit.studio/playground to explore config options
+  };
+};

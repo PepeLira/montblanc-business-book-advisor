@@ -49,6 +49,9 @@ export function ChatKitPanel({
   onResponseEnd,
   onThemeRequest,
 }: ChatKitPanelProps) {
+  // Mark theme as used to avoid lint warning
+  void theme;
+  
   const processedFacts = useRef(new Set<string>());
   const [errors, setErrors] = useState<ErrorState>(() => createInitialErrors());
   const [isInitializingSession, setIsInitializingSession] = useState(true);
@@ -193,9 +196,8 @@ export function ChatKitPanel({
           body: JSON.stringify({
             workflow: { id: WORKFLOW_ID },
             chatkit_configuration: {
-              // enable attachments
               file_upload: {
-                enabled: true,
+                enabled: false,
               },
             },
           }),
@@ -264,8 +266,8 @@ export function ChatKitPanel({
   const chatkit = useChatKit({
     api: { getClientSecret },
     theme: {
-      colorScheme: theme,
-      ...getThemeConfig(theme),
+      colorScheme: "light", // Force light theme only
+      ...getThemeConfig("light"),
     },
     startScreen: {
       greeting: GREETING,
@@ -274,8 +276,7 @@ export function ChatKitPanel({
     composer: {
       placeholder: PLACEHOLDER_INPUT,
       attachments: {
-        // Enable attachments
-        enabled: true,
+        enabled: false,
       },
     },
     threadItemActions: {
@@ -344,7 +345,7 @@ export function ChatKitPanel({
   }
 
   return (
-    <div className="relative pb-8 flex h-[90vh] w-full rounded-2xl flex-col overflow-hidden bg-white shadow-sm transition-colors dark:bg-slate-900">
+    <div className="relative flex w-full md:rounded-2xl rounded-none h-[calc(100vh-6rem)] md:h-[800px] md:max-h-[80vh] flex-col overflow-hidden bg-transparent shadow-2xl">
       <ChatKit
         key={widgetInstanceKey}
         control={chatkit.control}
