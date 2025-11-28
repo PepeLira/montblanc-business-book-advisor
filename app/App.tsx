@@ -27,11 +27,11 @@ export default function App() {
       
       {/* Main area with mountain logo watermark */}
       <main className="relative pt-16 min-h-screen flex items-center justify-center px-4 py-8">
-        <div className="fixed bottom-8 right-8 opacity-20 pointer-events-none z-0">
+        <div className="fixed bottom-8 right-8 opacity-10 pointer-events-none z-0">
           <img 
             src="/images/montblanc-logo-icon.png"
             alt="Montblanc Logo"
-            className="w-32 h-32 md:w-32 md:h-32 object-contain"
+            className="w-32 h-32 md:w-110 md:h-110 object-contain"
           />
         </div>
 

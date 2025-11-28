@@ -12,13 +12,13 @@ export const STARTER_PROMPTS: StartScreenPrompt[] = [
     icon: "circle-question",
   },
   {
-    label: "Me gustaría leer sobre Libros de negocios y Liderazgo",
-    prompt: "Me gustaría leer sobre Libros de negocios y Liderazgo",
+    label: "Me gustaría leer sobre negocios y liderazgo",
+    prompt: "Me gustaría leer sobre negocios y liderazgo",
     icon: "book-open",
   },
   {
-    label: "Cuentame sobre el libro Superintelligence (2020), quién lo escribió y sus puntos clave",
-    prompt: "Cuentame sobre el libro Superintelligence (2020), quién lo escribió y sus puntos clave",
+    label: "¿Cuéntame sobre \"Nunca te pares de Phil Knight\"?",
+    prompt: "¿Cuéntame sobre \"Nunca te pares de Phil Knight\"?",
     icon: "search",
   },
 ];
