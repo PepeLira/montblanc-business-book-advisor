@@ -17,8 +17,8 @@ export const STARTER_PROMPTS: StartScreenPrompt[] = [
     icon: "book-open",
   },
   {
-    label: "¿Cuéntame sobre \"Nunca te pares de Phil Knight\"?",
-    prompt: "¿Cuéntame sobre \"Nunca te pares de Phil Knight\"?",
+    label: "¿Cuéntame sobre \"Atomic Habits\" de  James Clear?",
+    prompt: "¿Cuéntame sobre \"Atomic Habits\" de  James Clear?",
     icon: "search",
   },
 ];
